@@ -6,7 +6,7 @@ matches_page = requests.get(URL)
 
 parsed_matches = BeautifulSoup(matches_page.content, 'html.parser')
 
-#TODO there's show more button on the web page. This does not find the matches hidden behind import
+#TODO there's show more button on the web page. This does not find the matches hidden behind it
 predictions = parsed_matches.find_all("div", {"class": "prediction prediction-fixture"})
 
 for pred in predictions:
