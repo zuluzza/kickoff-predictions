@@ -1,6 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 
+def predictionString2Odds(str):
+	return 1.0 / (float(str.strip("%")) / 100)
+
 URL = 'https://kickoff.ai/matches'
 matches_page = requests.get(URL)
 
@@ -14,10 +17,10 @@ for pred in predictions:
 	away_team = pred.find("div", {"class": "team-away"}).text
 
 	home_win = pred.find("span", {"class": "prediction-win-home"}).text
-	home_win = int(home_win.strip("%"))
+	home_win = predictionString2Odds(home_win)
 	tie = pred.find("span", {"class": "prediction-draw"}).text
-	tie = int(tie.strip("%"))
+	tie = predictionString2Odds(tie)
 	away_win = pred.find("span", {"class": "prediction-win-away"}).text
-	away_win = int(away_win.strip("%"))
+	away_win = predictionString2Odds(away_win)
 
-	print("{} vs {}Predicting: home {} - tie {} - away {}".format(home_team, away_team, home_win, tie, away_win))
+	print("{} vs {}Predicted odds: home {} - tie {} - away {}".format(home_team, away_team, home_win, tie, away_win))
