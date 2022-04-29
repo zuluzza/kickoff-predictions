@@ -7,6 +7,12 @@ pip install requests
 
 pip install beautifulsoup4
 
+pip install selenium
+
+pip install webdriver-manager
+
+Note: also requires installed chrome and chromedriver on your machine
+
 ## running
 python main.py
 
