@@ -18,7 +18,7 @@ python main.py
 
 #### Next steps
 1. compare predictions and results to determine if articial intelligence beats betting market
-~~2. make a web scraper for booker's betting odds~~
+2. ~~make a web scraper for booker's betting odds~~
 3. combine predictions and betting odds to propose winning bets
 4. recreate own AI from papers in http://kickoff.ai/
 5. expand to cover more leagues
